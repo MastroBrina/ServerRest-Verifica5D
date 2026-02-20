@@ -52,13 +52,16 @@ public class GetHandler implements HttpHandler {
             }
             
             // Parsing dei valori
-            String giocata=parametri.toString();
-            Integer numero= Integer.parseInt(parametri);
+            String giocata=parametri.get("giocata");
+            Integer numero= Integer.parseInt(parametri.get("numero"));
             // Esegue la logica di calcolo
-            double risultato = RouletteService.logicaDiCalcolo();
+            Boolean risultato = RouletteService.logicaDiCalcolo(giocata, numero);
             
             // Crea l'oggetto risposta
             RouletteResponse response = new RouletteResponse(
+                giocata,
+                numero.toString(),
+                risultato.toString()
             );
             
             // GSON converte automaticamente l'oggetto Java in JSON
@@ -77,8 +80,13 @@ public class GetHandler implements HttpHandler {
 
     // Validazione dei parametri (da implementare)
     private boolean validazioneParametri(Map<String, String> parametri) {
-        
-        return false;
+        Boolean validazione=false;
+        if(!parametri.get("giocata").equals("")||parametri.get("numero")!=null||!parametri.get("giocata").equals(null)){
+            validazione=true;
+        }else{
+            validazione=false;
+        }
+        return validazione;
     }
     
     /**
