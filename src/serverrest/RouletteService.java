@@ -45,7 +45,7 @@ public class RouletteService {
     private static boolean parametriValidi(String giocata, Integer numero)
     {
         Boolean validazione=false;
-        if(numero!=0&&!giocata.equals("")){
+        if(numero!=0||!giocata.equals("")||numero!=null||!giocata.equals(null)){
             validazione=true;
         }else{
             validazione=false;

@@ -9,7 +9,8 @@ package serverrest;
  * @author delfo
  */
 public class RouletteRequest {
-    
+    private String giocata;
+    private String numero;
     
     // Costruttore vuoto necessario per GSON
     public RouletteRequest() {
