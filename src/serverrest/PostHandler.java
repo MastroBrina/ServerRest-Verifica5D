@@ -58,7 +58,7 @@ public class PostHandler implements HttpHandler {
                 return;
             }
             
-            if (validazioneParametri(request)) {
+            if (!validazioneParametri(request)) {
                 inviaErrore(exchange, 400, "Operatore mancante o vuoto");
                 return;
             }
