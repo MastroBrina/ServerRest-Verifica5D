@@ -17,14 +17,40 @@ public class RouletteRequest {
     }
     
     // Costruttore con parametri  
-   
+   public RouletteRequest(String giocata, String numero) {
+        this.giocata = giocata;
+        this.numero = numero;
+    }
     
     // Getter
-   
+   public String getGiocata() {
+        return giocata;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
     
     // Setter
-    
+     public void setGiocata(String giocata) {
+        this.giocata = giocata;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
 
     // ToString
+
+    @Override
+    public String toString() {
+        return "RouletteRequest{" + "giocata=" + giocata + ", numero=" + numero + '}';
+    }
+    
+   
+
+    
+
+    
     
 }

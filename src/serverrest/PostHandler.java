@@ -64,8 +64,8 @@ public class PostHandler implements HttpHandler {
             }
             
             // Chiama la logica di calcolo DA FARE
-           RouletteService roulette = new RouletteService();
-           roulette.logicaDiCalcolo();
+            Integer numero=Integer.parseInt(request.getNumero());
+           Boolean risultato=RouletteService.logicaDiCalcolo(request.getGiocata(),numero);
             
             // Crea l'oggetto risposta DA FARE
            RouletteResponse response = new RouletteResponse(
@@ -88,7 +88,7 @@ public class PostHandler implements HttpHandler {
     // Validazione dei parametri (da implementare)
     private boolean validazioneParametri(RouletteRequest request) {
         Boolean validazione=false;
-        if(!request.get("giocata").equals("")||request.get("numero")!=null||!request.get("giocata").equals(null)){
+        if(!request.getGiocata().equals("")||request.getNumero()!=null||!request.getGiocata().equals(null)){
             validazione=true;
         }else{
             validazione=false;
