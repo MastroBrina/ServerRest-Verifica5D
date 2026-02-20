@@ -9,7 +9,7 @@ package serverrest;
  * @author delfo
  */
 public class RouletteRequest {
-    private 
+    
     
     // Costruttore vuoto necessario per GSON
     public RouletteRequest() {
