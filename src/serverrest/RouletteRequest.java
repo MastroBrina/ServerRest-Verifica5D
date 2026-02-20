@@ -46,11 +46,4 @@ public class RouletteRequest {
     public String toString() {
         return "RouletteRequest{" + "giocata=" + giocata + ", numero=" + numero + '}';
     }
-    
-   
-
-    
-
-    
-    
 }
