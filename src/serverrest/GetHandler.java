@@ -45,7 +45,7 @@ public class GetHandler implements HttpHandler {
             Map<String, String> parametri = estraiParametri(exchange.getRequestURI().getQuery());
             
             // Validazione parametri
-            if (validazioneParametri(parametri)) {
+            if (!validazioneParametri(parametri)) {
                 inviaErrore(exchange, 400, 
                     "Parametri mancanti. Necessari: operando1, operando2, operatore");
                 return;

@@ -80,7 +80,7 @@ public class ServerRest {
         
         Map endpoints = new HashMap<>();
         endpoints.put("POST", "/api/roulette/paridispari/post");
-        endpoints.put("GET", "/api/roulette/paridispari/get?numero=X");
+        endpoints.put("GET", "/api/roulette/paridispari/get?giocata=X&numero=Y");
         info.put("endpoints", endpoints);
         
         Map operatori = new HashMap<>();
