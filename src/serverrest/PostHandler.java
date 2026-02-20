@@ -49,7 +49,7 @@ public class PostHandler implements HttpHandler {
             );
             
             // GSON converte automaticamente il JSON in oggetto Java
-            DaFareRequest request = gson.fromJson(reader, DaFareRequest.class);
+            RouletteRequest request = gson.fromJson(reader, RouletteRequest.class);
             reader.close();
             
             // Validazione
@@ -67,7 +67,7 @@ public class PostHandler implements HttpHandler {
            
             
             // Crea l'oggetto risposta DA FARE
-           DaFareResponse response = new DaFareResponse(
+           RouletteResponse response = new RouletteResponse(
             );
             
             // GSON converte automaticamente l'oggetto Java in JSON
@@ -85,7 +85,7 @@ public class PostHandler implements HttpHandler {
     }
     
     // Validazione dei parametri (da implementare)
-    private boolean validazioneParametri(DaFareRequest request) {
+    private boolean validazioneParametri(RouletteRequest request) {
         
         return false;
     }

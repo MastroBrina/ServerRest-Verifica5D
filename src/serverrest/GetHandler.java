@@ -52,13 +52,13 @@ public class GetHandler implements HttpHandler {
             }
             
             // Parsing dei valori
-            
-            
+            String giocata=parametri.toString();
+            Integer numero= Integer.parseInt(parametri);
             // Esegue la logica di calcolo
-            double risultato = DaFareService.logicaDiCalcolo();
+            double risultato = RouletteService.logicaDiCalcolo();
             
             // Crea l'oggetto risposta
-            DaFareResponse response = new DaFareResponse(
+            RouletteResponse response = new RouletteResponse(
             );
             
             // GSON converte automaticamente l'oggetto Java in JSON

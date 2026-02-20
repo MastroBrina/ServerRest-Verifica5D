@@ -8,11 +8,11 @@ package serverrest;
  *
  * @author delfo
  */
-public class DaFareResponse {
+public class RouletteResponse {
 
     
     // Costruttore vuoto necessario per GSON
-    public DaFareResponse() {
+    public RouletteResponse() {
     }
     
     // Costruttore con parametri
