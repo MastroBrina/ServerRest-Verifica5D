@@ -47,7 +47,7 @@ public class GetHandler implements HttpHandler {
             // Validazione parametri
             if (!validazioneParametri(parametri)) {
                 inviaErrore(exchange, 400, 
-                    "Parametri mancanti. Necessari: operando1, operando2, operatore");
+                    "Parametri mancanti");
                 return;
             }
             
@@ -70,7 +70,7 @@ public class GetHandler implements HttpHandler {
             inviaRisposta(exchange, 200, jsonRisposta);
             
         } catch (NumberFormatException e) {
-            inviaErrore(exchange, 400, "Operandi non validi. Devono essere numeri");
+            inviaErrore(exchange, 400, "Operandi non validi.");
         } catch (IllegalArgumentException e) {
             inviaErrore(exchange, 400, e.getMessage());
         } catch (Exception e) {
