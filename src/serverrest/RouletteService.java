@@ -28,7 +28,7 @@ public class RouletteService {
         }
         
         try {
-            if(giocata.equals("PARI")&&numero%2==0||giocata.equals("DISPARI")&&numero%2==1){
+            if(giocata.equals("PARI")&&numero%2==0&&numero!=0||giocata.equals("DISPARI")&&numero%2==1){
                 vittoria=true;
             }
             else{
@@ -45,7 +45,7 @@ public class RouletteService {
     private static boolean parametriValidi(String giocata, Integer numero)
     {
         Boolean validazione=false;
-        if(!giocata.equals("")||numero!=null||!giocata.equals(null)){
+        if(!giocata.equals("")&&numero!=null){
             validazione=true;
         }else{
             validazione=false;

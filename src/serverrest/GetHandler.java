@@ -81,12 +81,16 @@ public class GetHandler implements HttpHandler {
     // Validazione dei parametri (da implementare)
     private boolean validazioneParametri(Map<String, String> parametri) {
         Boolean validazione=false;
-        if(!parametri.get("giocata").equals("")||parametri.get("numero")!=null||!parametri.get("giocata").equals(null)){
-            validazione=true;
+        if(parametri.get("giocata")!=null){
+            if(!parametri.get("giocata").equals("")&&parametri.get("numero")!=null){
+                validazione=true;
+            }else{
+                validazione=false;
+            }
+            return validazione;
         }else{
-            validazione=false;
-        }
-        return validazione;
+            return validazione;
+        } 
     }
     
     /**

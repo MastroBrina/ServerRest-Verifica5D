@@ -91,12 +91,16 @@ public class PostHandler implements HttpHandler {
     // Validazione dei parametri (da implementare)
     private boolean validazioneParametri(RouletteRequest request) {
         Boolean validazione=false;
-        if(!request.getGiocata().equals("")||request.getNumero()!=null||!request.getGiocata().equals(null)){
-            validazione=true;
+        if(request.getGiocata()!=null){
+            if(!request.getGiocata().equals("")&&request.getNumero()!=null){
+                validazione=true;
+            }else{
+                validazione=false;
+            }
+            return validazione;
         }else{
-            validazione=false;
+            return validazione;
         }
-        return validazione;
     }
 
     /**
