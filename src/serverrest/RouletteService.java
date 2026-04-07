@@ -27,16 +27,18 @@ public class RouletteService {
             throw new IllegalArgumentException("Operatore non può essere vuoto");
         }
         
-        try {
-            if(giocata.equals("PARI")&&numero%2==0&&numero!=0||giocata.equals("DISPARI")&&numero%2==1){
-                vittoria=true;
-            }
-            else{
-                vittoria=false;
-            }
-        } catch (Exception e) {
-            throw new IllegalArgumentException(
-              "Opzione non valida. Opzione deve essere PARI o DISPARI");
+        if (!giocata.equals("PARI") && !giocata.equals("DISPARI")) {
+        throw new IllegalArgumentException(
+            "Opzione non valida. Opzione deve essere PARI o DISPARI");
+        }
+        
+        if(giocata.equals("PARI")&&numero%2==0&&numero!=0){
+            vittoria=true;
+        }else if(giocata.equals("DISPARI")&&numero%2==1){
+            vittoria=true;
+        }
+        else{
+            vittoria=false;
         }
         return vittoria;
     }

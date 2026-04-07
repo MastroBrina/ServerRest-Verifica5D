@@ -70,7 +70,7 @@ public class GetHandler implements HttpHandler {
             inviaRisposta(exchange, 200, jsonRisposta);
             
         } catch (NumberFormatException e) {
-            inviaErrore(exchange, 400, "Operandi non validi.");
+            inviaErrore(exchange, 400, "Parametri non validi.");
         } catch (IllegalArgumentException e) {
             inviaErrore(exchange, 400, e.getMessage());
         } catch (Exception e) {
